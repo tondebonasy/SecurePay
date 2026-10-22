@@ -31,4 +31,8 @@ coverage/
 /output.txt
 /tmp.js
 **/dependency-audit.json
+**/dependency-audit-*.json
+**/dist-redesign-android/
+**/debug.keystore
+**/com.facebook.react.devsupport.MultipartStreamReader
 
