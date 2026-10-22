@@ -1,0 +1,34 @@
+# Local secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+*credentials*.txt
+# build and editor outputs
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+target/
+**/target/
+build/
+**/build/
+.angular/
+**/.angular/
+.expo/
+**/.expo/
+.idea/
+**/.idea/
+.gradle/
+**/.gradle/
+coverage/
+.DS_Store
+*.log
+
+# Supplied scratch output and local audit reports
+/output.txt
+/tmp.js
+**/dependency-audit.json
+

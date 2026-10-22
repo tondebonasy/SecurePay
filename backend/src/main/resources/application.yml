@@ -1,0 +1,85 @@
+server:
+  port: 8080
+  address: 0.0.0.0
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/moneyguard?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD}
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  flyway:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/moneyguard?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    user: ${DB_USER:root}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+  jackson:
+    time-zone: UTC
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 6MB
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+app:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
+
+  rate-limit:
+    requests-per-minute: ${RATE_LIMIT_PER_MIN:120}
+
+  jwt:
+    secret: ${JWT_SECRET}
+    access-ttl-minutes: ${JWT_ACCESS_TTL_MINUTES:30}
+    refresh-ttl-days: ${REFRESH_TTL_DAYS:14}
+
+  idempotency:
+    ttl-minutes: 60
+
+  qr:
+    hmac-secret: ${QR_HMAC_SECRET}
+
+  paypal:
+    base-url: ${PAYPAL_BASE_URL:https://api-m.sandbox.paypal.com}
+    client-id: ${PAYPAL_CLIENT_ID:}
+    client-secret: ${PAYPAL_CLIENT_SECRET:}
+    webhooks-enabled: ${PAYPAL_WEBHOOKS_ENABLED:false}
+    webhook-id: ${PAYPAL_WEBHOOK_ID:}
+    merchant-email: ${PAYPAL_MERCHANT_EMAIL:}
+
+  paynow:
+    base-url: ${PAYNOW_BASE_URL:https://www.paynow.co.zw}
+    integration-id: ${PAYNOW_INTEGRATION_ID:}
+    integration-key: ${PAYNOW_INTEGRATION_KEY:}
+    return-url: ${PAYNOW_RETURN_URL:http://localhost:8080/v1/paynow/return}
+    result-url: ${PAYNOW_RESULT_URL:http://localhost:8080/v1/webhooks/paynow}
+    auth-email: ${PAYNOW_AUTH_EMAIL:}
+
+  stellar:
+    worker-url: ${STELLAR_WORKER_URL:http://localhost:3030}
+    enabled: ${STELLAR_ENABLED:false}
+    horizon-url: ${STELLAR_HORIZON_URL:https://horizon-testnet.stellar.org}
+    network-passphrase: ${STELLAR_NETWORK_PASSPHRASE:Test SDF Network ; September 2015}
+    secret-key: ${STELLAR_SECRET_KEY:}
+
+  expo:
+    enabled: ${EXPO_ENABLED:false}
+    access-token: ${EXPO_ACCESS_TOKEN:}

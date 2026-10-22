@@ -1,0 +1,15 @@
+{
+  "name": "securepay-stellar-worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^4.19.2",
+    "stellar-sdk": "^12.1.0"
+  }
+}

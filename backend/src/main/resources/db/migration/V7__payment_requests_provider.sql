@@ -1,0 +1,4 @@
+ALTER TABLE payment_requests
+  ADD COLUMN provider VARCHAR(16) NOT NULL DEFAULT 'PAYPAL',
+  ADD COLUMN paynow_method VARCHAR(16) NULL,
+  ADD COLUMN paynow_phone VARCHAR(32) NULL;

@@ -1,0 +1,1 @@
+module.exports={content:['./App.{js,jsx,ts,tsx}','./src/**/*.{js,jsx,ts,tsx}'],presets:[require('nativewind/preset')],theme:{extend:{colors:{primary:'#2456E6',paper:'#F5F7FC',ink:'#0D1B37'},fontFamily:{sans:['Manrope_500Medium']}}},plugins:[]};
