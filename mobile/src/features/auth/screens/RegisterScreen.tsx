@@ -52,7 +52,7 @@ export function RegisterScreen({ navigation }: { navigation: { goBack: () => voi
 }
 
 const styles = StyleSheet.create({
-  background: { flex: 1, backgroundColor: colors.background },
+  background: { flex: 1, backgroundColor: colors.paper },
   scrim: { ...StyleSheet.absoluteFillObject, backgroundColor: "rgba(247,244,238,0.84)" },
   safe: { flex: 1 },
   content: { flexGrow: 1, justifyContent: "center", padding: spacing.lg },
