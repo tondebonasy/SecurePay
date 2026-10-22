@@ -28,5 +28,4 @@ The web client expects a running SecurePay API configured through `admin-web/.en
 - `backend/` — API service consumed by the workspace.
 - `mobile/` — companion mobile client.
 - `docs/` — API, security, architecture, and validation notes.
-
-Do not commit credentials, local databases, generated logs, build output, or environment files.
+- 
